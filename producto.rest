@@ -1,0 +1,39 @@
+### Obtener
+GET http://localhost:3000/producto
+
+### Guardar
+POST http://localhost:3000/producto
+Content-Type: application/json
+
+{
+    "nombre" : "Teclado",
+    "precio" : 259.98
+}
+
+### Mostrar
+GET http://localhost:3000/producto/50
+
+
+### Modificar
+PUT http://localhost:3000/producto/50
+Content-Type: application/json
+
+{
+    "nombre" : "prueba"
+}
+
+### Modificar
+PATCH http://localhost:3000/producto/50
+Content-Type: application/json
+
+{
+    "nombre" : "prueba"
+}
+
+### Eliminar
+DELETE http://localhost:3000/producto/50
+Content-Type: application/json
+
+{
+    "nombre" : "prueba"
+}
