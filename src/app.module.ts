@@ -2,8 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Producto } from './entities/producto.entity';
-import { Categoria } from './entities/categoria.entity';
+
+import { ProductoModule } from './producto/producto.module';
+import { Categoria } from './producto/entities/categoria.entity';
+import { Producto } from './producto/entities/producto.entity';
 
 @Module({
 
@@ -15,12 +17,13 @@ import { Categoria } from './entities/categoria.entity';
       username: 'root',
       password: '',
       database: 'test_node_nest',
-      entities: [Categoria,Producto],
+      entities: [Categoria, Producto],
       synchronize: true,
     }),
+    ProductoModule
   ],
 
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
